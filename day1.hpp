@@ -1,5 +1,4 @@
 #include "day.hpp"
-#include <numeric>
 
 class Day1 : public Day {
 
