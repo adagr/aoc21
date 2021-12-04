@@ -19,6 +19,7 @@ public:
 
     virtual void run() = 0;
 
+protected:
     void printLines() {
         for(const auto& line : lines)
             std::cout << line << std::endl;
@@ -32,6 +33,5 @@ public:
         return linesInt;
     }
 
-protected:
     std::vector<std::string> lines{};
 };
