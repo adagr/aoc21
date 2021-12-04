@@ -8,6 +8,7 @@ public:
     ~Day1() override = default;
     
     void run() override {
+        // Part 1
         int count{};
         const auto& linesInt{getLinesInt()};
         for (int i{1}; i < linesInt.size(); ++i)
@@ -16,10 +17,11 @@ public:
 
         std::cout << count << std::endl;
 
+        // Part 2
         count = 0;
         int previousSum = 100000;
-        for (int i{2}; i < linesInt.size(); ++i) {
-            auto sum = linesInt[i] + linesInt[i-1] + linesInt[i-2];
+        for (auto it = linesInt.begin(); it < linesInt.end()-2; ++it) {
+            auto sum = std::accumulate(it, it+3, 0);
             if (previousSum < sum)
                 ++count;
 
