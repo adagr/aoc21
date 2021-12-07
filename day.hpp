@@ -11,9 +11,7 @@ class Day {
 
 public:
     explicit Day(std::string fileName) {
-        lines.clear();
         std::ifstream input{fileName};
-        std::string line;
         for (std::string line; std::getline(input, line);)
             lines.emplace_back(line);
     }
@@ -35,9 +33,10 @@ protected:
         return linesInt;
     }
 
-    std::vector<int> getNumbersInLine(int line, char delim) {
+    template<typename T = int>
+    std::vector<T> getNumbersInLine(int line, char delim) {
         //delim needs to be char for day4
-        std::vector<int> numbers{};
+        std::vector<T> numbers{};
         auto s = lines[line];
         while(true) {
             while (s[0] == delim) {
