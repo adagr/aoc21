@@ -6,6 +6,9 @@
 #include <iostream>
 #include <numeric>
 #include <array>
+#include <deque>
+#include <map>
+#include <set>
 
 class Day {
 

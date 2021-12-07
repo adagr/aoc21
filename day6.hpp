@@ -1,5 +1,4 @@
 #include "day.hpp"
-#include <deque>
 
 class Day6 : public Day {
 
