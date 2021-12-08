@@ -57,6 +57,25 @@ protected:
 
         return numbers;
     }
+    
+    template<typename T = std::string>
+    std::vector<T> getFromLine(const std::string& line, std::string delim) {
+        //delim needs to be char for day4
+        std::vector<T> data{};
+        auto s = line;
+        while(true) {
+            auto pos = s.find(delim);
+            if (pos == std::string::npos) {
+                data.emplace_back(s);
+                break;
+            }
+                
+            data.emplace_back(s.substr(0, pos));
+            s = s.erase(0, pos + delim.size());
+        }
+
+        return data;
+    }
 
     std::vector<std::string> lines{};
 };
