@@ -9,6 +9,7 @@
 #include <deque>
 #include <map>
 #include <set>
+#include <algorithm>
 
 class Day {
 
@@ -75,6 +76,11 @@ protected:
         }
 
         return data;
+    }
+
+    template<typename Container, typename Value>
+    bool contains(const Container& container, Value value) {
+        return container.find(value) != container.end();
     }
 
     std::vector<std::string> lines{};

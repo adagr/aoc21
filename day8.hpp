@@ -1,5 +1,4 @@
 #include "day.hpp"
-#include <algorithm>
 
 class Day8 : public Day {
 

@@ -36,7 +36,7 @@ public:
         for (const auto& lowPoint : lowPoints) {
             std::vector<std::pair<int, int>> locationsToSearch{}, visitedLocations{};
             locationsToSearch.push_back(lowPoint);
-            int sumLocations{};
+            int numLocations{};
             while(!locationsToSearch.empty()) {
                 int y = locationsToSearch.front().first;
                 int x = locationsToSearch.front().second;
@@ -44,7 +44,7 @@ public:
                     return y == location.first && x == location.second;
                 });
                 if (grid[y][x] < 9 && searched == visitedLocations.end()) {
-                    ++sumLocations;
+                    ++numLocations;
                     // add adjecent locations
                     if (0 < y)
                         locationsToSearch.push_back(std::make_pair(y - 1, x));
@@ -60,11 +60,11 @@ public:
                 locationsToSearch.erase(locationsToSearch.begin());
             }
 
-            basins.emplace_back(sumLocations);
+            basins.emplace_back(numLocations);
         }
 
         std::sort(basins.rbegin(), basins.rend());
-        std::cout << basins[0] * basins[1] * basins[2];
+        std::cout << std::accumulate(basins.begin(), basins.begin()+3, 1, std::multiplies<>());
     }
 
 };
