@@ -67,7 +67,7 @@ public:
             findNumber(input, numbers, 1, 3, 5, 1.0f);
             // 3 -> 9
             findNumber(input, numbers, 3, 9, 6, 1.0f);
-             // 4 -> 5(3/4 match)
+            // 4 -> 5(3/4 match)
             findNumber(input, numbers, 4, 5, 5, 0.75f);
             // 7 -> 0
             findNumber(input, numbers, 7, 0, 6, 1.0f);
