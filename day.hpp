@@ -38,10 +38,10 @@ protected:
     }
 
     template<typename T = int>
-    std::vector<T> getNumbersInLine(int line, char delim) {
+    std::vector<T> getNumbersInLine(const std::string& line, char delim) {
         //delim needs to be char for day4
         std::vector<T> numbers{};
-        auto s = lines[line];
+        auto s = line;
         while(true) {
             while (s[0] == delim) {
                 s = s.erase(0, 1);
@@ -61,7 +61,6 @@ protected:
     
     template<typename T = std::string>
     std::vector<T> getFromLine(const std::string& line, std::string delim) {
-        //delim needs to be char for day4
         std::vector<T> data{};
         auto s = line;
         while(true) {

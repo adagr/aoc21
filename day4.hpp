@@ -22,7 +22,7 @@ public:
             }
 
             int x{};
-            auto lineNumbers = getNumbersInLine(i, ' ');
+            auto lineNumbers = getNumbersInLine(lines[i], ' ');
             for (int j{}; j < lineNumbers.size(); ++j) {
                 board[y][x] = lineNumbers[j];
                 ++x;
