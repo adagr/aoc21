@@ -44,7 +44,7 @@ public:
 
         // Part 2
         int lastRow{};
-        int lastColumn{};
+        int lastColumn{-1};
         for (const auto& dot : dots) {
             if (dot.first > lastRow) {
                 std::cout << std::endl;
