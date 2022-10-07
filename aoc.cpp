@@ -18,9 +18,10 @@
 #include "day18.hpp"
 #include "day19.hpp"
 #include "day20.hpp"
+#include "day21.hpp"
 
 int main(int argc, char const *argv[]) {
-    Day* day = new Day20{};
+    Day* day = new Day21{};
     day->run();
     delete day;
     return 0;
